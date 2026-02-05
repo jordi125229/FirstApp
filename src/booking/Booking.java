@@ -63,11 +63,11 @@ public class Booking {
     @Override
     public String toString() {
         return "Booking id: {" + id +
-                "\nuser: " + user +
-                "\nresource- " + resource +
-                "\nstart- " + start +
+                "\n" + user +
+                "\n" + resource +
+                "\nstart - " + start +
                 ", end- " + end +
-                "\nstatus- " + status +
+                "\nstatus - " + status +
                 "\ncalculatedPrice-" + calculatedPrice;
     }
 

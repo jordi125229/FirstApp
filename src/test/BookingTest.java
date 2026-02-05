@@ -19,7 +19,7 @@ class BookingTest {
         LocalDateTime end = start.plusHours(2);
         StandardPricing price = new StandardPricing();
 
-        Booking booking = new Booking("id", user1, desk, start, end, BookingStatus.CONFIRMED, null);
+        Booking booking = new Booking("id", user1, desk, start, end, BookingStatus.CONFIRMED, desk.hourlyRate());
         System.out.println(booking);
 
         booking.cancel();

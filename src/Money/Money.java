@@ -30,4 +30,10 @@ public class Money {
     public Money divide(BigDecimal other) {
         return new Money(this.amount.divide(other));
     }
+
+    @Override
+    public String toString() {
+        return "Price: " + amount + currency;
+
+    }
 }
