@@ -1,6 +1,6 @@
 package user;
 
-class User {
+public class User {
     String email;
     String displayName;
 

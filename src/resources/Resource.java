@@ -2,7 +2,7 @@ package resources;
 
 import Money.Money;
 
-abstract class Resource {
+public abstract class Resource {
     String name;
     Money customHourlyRate;
 
