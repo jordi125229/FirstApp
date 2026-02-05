@@ -1,7 +1,9 @@
+package Money;
+
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
-class Money {
+public class Money {
     private final BigDecimal amount;
     private static final String currency = "PLN";
 
