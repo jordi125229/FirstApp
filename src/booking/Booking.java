@@ -51,7 +51,7 @@ public class Booking {
         }
     }
 
-    int durationMinutes(){
+    public int durationMinutes(){
         return (int) Duration.between(start, end).toMinutes();
     }
 
@@ -69,6 +69,34 @@ public class Booking {
                 ", end- " + end +
                 "\nstatus- " + status +
                 "\ncalculatedPrice-" + calculatedPrice;
+    }
+
+    public Resource getResource() {
+        return resource;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public LocalDateTime getStart() {
+        return start;
+    }
+
+    public LocalDateTime getEnd() {
+        return end;
+    }
+
+    public BookingStatus getStatus() {
+        return status;
+    }
+
+    public Money getCalculatedPrice() {
+        return calculatedPrice;
     }
 }
 
