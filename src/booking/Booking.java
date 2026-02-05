@@ -8,7 +8,7 @@ import java.time.Duration;
 import java.time.LocalDateTime;
 import java.util.Random;
 
-class Booking {
+public class Booking {
     String id;
     User user;
     Resource resource;
@@ -29,21 +29,25 @@ class Booking {
 //        this.payment = payment;
     }
 
-    public void confirmStatus(BookingStatus Status) {
-        if (status != BookingStatus.PENDING) {
-            this.status = BookingStatus.CONFIRMED;
-        }
+    public void changeStatus(){
+
     }
 
-    public void completeStatus(BookingStatus Status) {
-        if (status != BookingStatus.CONFIRMED) {
-            this.status = BookingStatus.COMPLETED;
-        }
-    }
-
-    public void cancelStatus(BookingStatus Status) {
+    public void confirm() {
         if (status == BookingStatus.PENDING) {
-            this.status = BookingStatus.CONFIRMED;
+            status = BookingStatus.CONFIRMED;
+        }
+    }
+
+    public void complete() {
+        if (status == BookingStatus.CONFIRMED) {
+            status = BookingStatus.COMPLETED;
+        }
+    }
+
+    public void cancel() {
+        if (status == BookingStatus.PENDING || status == BookingStatus.CONFIRMED) {
+            status = BookingStatus.CANCELLED;
         }
     }
 
@@ -55,10 +59,17 @@ class Booking {
         Random random = new Random();
         return random.nextInt();
     }
-}
 
-enum BookingStatus {
-    PENDING, CONFIRMED, CANCELLED, COMPLETED;
+    @Override
+    public String toString() {
+        return "Booking id: {" + id +
+                "\nuser: " + user +
+                "\nresource- " + resource +
+                "\nstart- " + start +
+                ", end- " + end +
+                "\nstatus- " + status +
+                "\ncalculatedPrice-" + calculatedPrice;
+    }
 }
 
 

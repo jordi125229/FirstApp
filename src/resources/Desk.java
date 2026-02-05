@@ -2,7 +2,7 @@ package resources;
 
 import Money.Money;
 
-class Desk extends Resource {
+public class Desk extends Resource {
     DeskType type;
 
     public Desk(String name, Money customHourlyRate, DeskType type) {
@@ -22,8 +22,10 @@ class Desk extends Resource {
     public String describe() {
         return name + "; " + type;
     }
+
+    @Override
+    public String toString() {
+        return "Desk No: " + name + "; " + type;
+    }
 }
 
-enum DeskType{
-    HOT, FIXED;
-}
